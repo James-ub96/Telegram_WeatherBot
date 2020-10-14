@@ -6,17 +6,19 @@ from datetime import datetime
 
 
 def send_msg(text):
-    token = "1296339800:AAFgR9pfNmFNIBVxTqdyFOUfGDeLwUSfqUY"
-    chat_id = '1179304537'
+    token = "TELEGRAM-API-TOKEN"
+    chat_id = 'BOT-CHAT-ID'
 
     url_req = "https://api.telegram.org/bot" + token + "/sendMessage" + "?chat_id=" + chat_id + "&text=" + text
     results = requests.get(url_req)
     return results.json()
 
 
-owm = pyowm.OWM('df4b51370d5a0384c5050e6c5caec480')
+owm = pyowm.OWM('OPENWEATHER-API-TOKEN')
 mgr = owm.weather_manager()
-one_call = mgr.one_call(lat=49.3200, lon=-123.0724)
+city_lat = 'LAT-OF-CITY'
+city_lon = 'LONG-OF-CITY'
+one_call = mgr.one_call(lat=city_lat, lon=city_lon)
 
 RainyDay = []
 
