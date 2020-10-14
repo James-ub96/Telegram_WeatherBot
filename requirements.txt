@@ -1,0 +1,4 @@
+requests
+pyowm
+pandas
+datetime
